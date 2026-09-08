@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Clínica Bella Vita | Estética & Bem-Estar</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #faf8f5;
+            color: #292522;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER */
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            border-bottom: 1px solid #eee5dc;
+        }
+
+        .nav {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #9b7352;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: #777;
+            margin-top: -3px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 14px;
+            color: #555;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #b18560;
+        }
+
+        .nav-button {
+            background: #b18560;
+            color: white;
+            padding: 11px 18px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            padding: 150px 25px 80px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(90deg, rgba(250,248,245,0.98) 0%, rgba(250,248,245,0.88) 45%, rgba(250,248,245,0.45) 100%),
+                linear-gradient(135deg, #eee2d7, #d9c1ad);
+        }
+
+        .hero-content {
+            max-width: 1150px;
+            width: 100%;
+            margin: auto;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 30px;
+            background: #eadbcd;
+            color: #956c4b;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            max-width: 650px;
+            font-family: Georgia, serif;
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.05;
+            margin-bottom: 22px;
+            color: #302a26;
+        }
+
+        .hero h1 span {
+            color: #a87955;
+        }
+
+        .hero p {
+            max-width: 570px;
+            color: #655d58;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #b18560;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            border: 1px solid #b18560;
+            color: #9b7352;
+            background: rgba(255,255,255,0.6);
+        }
+
+        /* SECTION */
+
+        section {
+            padding: 90px 25px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title small {
+            color: #b18560;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            margin-top: 8px;
+        }
+
+        .section-title p {
+            max-width: 600px;
+            margin: 12px auto 0;
+            color: #777;
+        }
+
+        /* SERVICES */
+
+        .services {
+            background: white;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: #faf8f5;
+            border: 1px solid #eee5dc;
+            border-radius: 20px;
+            padding: 32px 25px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(80,50,30,0.08);
+        }
+
+        .icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #eadbcd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .card p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .price {
+            margin-top: 20px;
+            color: #a87955;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: #f3ebe4;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            min-height: 430px;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #d7bda7, #eee1d5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .about-image div {
+            border: 1px solid rgba(255,255,255,0.8);
+            padding: 45px;
+            border-radius: 20px;
+        }
+
+        .about-image strong {
+            display: block;
+            font-family: Georgia, serif;
+            font-size: 32px;
+            color: white;
+        }
+
+        .about-text small {
+            color: #a87955;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .about-text h2 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            line-height: 1.15;
+            margin: 12px 0 20px;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .check-list {
+            margin-top: 25px;
+        }
+
+        .check-list div {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        /* TEAM */
+
+        .team {
+            background: white;
+        }
+
+        .team-card {
+            text-align: center;
+        }
+
+        .avatar {
+            width: 130px;
+            height: 130px;
+            margin: auto auto 18px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #dbc3b0, #b9906f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 42px;
+            font-family: Georgia, serif;
+        }
+
+        .team-card h3 {
+            font-size: 19px;
+        }
+
+        .team-card p {
+            color: #9b7352;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        /* DEPOIMENTOS */
+
+        .testimonials {
+            background: #f3ebe4;
+        }
+
+        .testimonial {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .stars {
+            color: #b18560;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial p {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 18px;
+        }
+
+        .testimonial strong {
+            font-size: 14px;
+        }
+
+        /* CTA */
+
+        .cta {
+            background: #2f2925;
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-family: Georgia, serif;
+            font-size: 44px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #d8d0ca;
+            max-width: 600px;
+            margin: auto auto 28px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .contact-box {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #eee5dc;
+            border-radius: 20px;
+        }
+
+        .contact-box h3 {
+            margin-bottom: 8px;
+        }
+
+        .contact-box p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #211d1a;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        /* WHATSAPP */
+
+        .whatsapp {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 999;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 27px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            nav {
+                display: none;
+            }
+
+            .nav-button {
+                padding: 9px 14px;
+            }
+
+            .cards,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .about-image {
+                min-height: 300px;
+            }
+
+            .hero {
+                padding-top: 130px;
+            }
+
+            section {
+                padding: 70px 20px;
+            }
+
+            .section-title h2,
+            .about-text h2,
+            .cta h2 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+
+        <a href="#" class="logo">
+            BELLA VITA
+            <span>CLÍNICA ESTÉTICA</span>
+        </a>
+
+        <nav>
+            <a href="#servicos">Serviços</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#equipe">Equipe</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <a class="nav-button" href="https://wa.me/5500000000000">
+            Agendar
+        </a>
+
+    </div>
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            ✦ CUIDADO • BELEZA • BEM-ESTAR
+        </div>
+
+        <h1>
+            Realce sua beleza de forma <span>natural.</span>
+        </h1>
+
+        <p>
+            Na Clínica Bella Vita, você encontra tratamentos personalizados,
+            profissionais especializados e uma experiência pensada para
+            valorizar sua melhor versão.
+        </p>
+
+        <div class="buttons">
+
+            <a href="https://wa.me/5500000000000" class="btn btn-primary">
+                📅 Agendar avaliação
+            </a>
+
+            <a href="#servicos" class="btn btn-secondary">
+                Conhecer tratamentos
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="services" id="servicos">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>NOSSOS TRATAMENTOS</small>
+
+            <h2>Cuidados que fazem a diferença</h2>
+
+            <p>
+                Tratamentos personalizados para cuidar da sua beleza,
+                autoestima e bem-estar.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">✨</div>
+
+                <h3>Limpeza de Pele</h3>
+
+                <p>
+                    Tratamento profundo para remover impurezas,
+                    controlar oleosidade e deixar a pele renovada.
+                </p>
+
+                <div class="price">
+                    A partir de R$ 120
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">💆</div>
+
+                <h3>Massagem Relaxante</h3>
+
+                <p>
+                    Um momento especial para aliviar tensões,
+                    relaxar o corpo e renovar suas energias.
+                </p>
+
+                <div class="price">
+                    A partir de R$ 100
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">💎</div>
+
+                <h3>Estética Facial</h3>
+
+                <p>
+                    Protocolos personalizados para cuidar da pele
+                    e proporcionar uma aparência mais saudável.
+                </p>
+
+                <div class="price">
+                    A partir de R$ 180
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about" id="sobre">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div class="about-image">
+
+                <div>
+
+                    <strong>BELLA VITA</strong>
+
+                    <p>
+                        Beleza que começa pelo cuidado.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-text">
+
+                <small>SOBRE A CLÍNICA</small>
+
+                <h2>
+                    Um espaço criado para você.
+                </h2>
+
+                <p>
+                    A Bella Vita nasceu com o propósito de oferecer
+                    atendimento personalizado em um ambiente confortável,
+                    moderno e acolhedor.
+                </p>
+
+                <p>
+                    Cada cliente recebe uma avaliação individual para
+                    encontrar o tratamento mais adequado às suas necessidades.
+                </p>
+
+                <div class="check-list">
+
+                    <div>✓ Atendimento personalizado</div>
+                    <div>✓ Profissionais especializados</div>
+                    <div>✓ Ambiente confortável</div>
+                    <div>✓ Tratamentos personalizados</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="team" id="equipe">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>NOSSA EQUIPE</small>
+
+            <h2>Profissionais que cuidam de você</h2>
+
+            <p>
+                Experiência, conhecimento e atenção em cada atendimento.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="team-card">
+
+                <div class="avatar">AM</div>
+
+                <h3>Ana Martins</h3>
+
+                <p>Especialista em Estética</p>
+
+            </div>
+
+
+            <div class="team-card">
+
+                <div class="avatar">CR</div>
+
+                <h3>Carolina Ribeiro</h3>
+
+                <p>Especialista Facial</p>
+
+            </div>
+
+
+            <div class="team-card">
+
+                <div class="avatar">JS</div>
+
+                <h3>Juliana Santos</h3>
+
+                <p>Terapeuta Corporal</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="testimonials">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>DEPOIMENTOS</small>
+
+            <h2>O que nossas clientes dizem</h2>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="testimonial">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "Fui muito bem atendida desde o primeiro contato.
+                    O ambiente é lindo e o resultado do tratamento
+                    superou minhas expectativas."
+                </p>
+
+                <strong>Mariana S.</strong>
+
+            </div>
+
+
+            <div class="testimonial">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "Profissionais excelentes e muito atenciosos.
+                    Com certeza vou voltar e indicar para minhas amigas."
+                </p>
+
+                <strong>Fernanda R.</strong>
+
+            </div>
+
+
+            <div class="testimonial">
+
+                <div class="stars">★★★★★</div>
+
+                <p>
+                    "Adorei toda a experiência. Atendimento,
+                    ambiente e cuidado impecáveis."
+                </p>
+
+                <strong>Camila A.</strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>Pronta para cuidar de você?</h2>
+
+        <p>
+            Agende uma avaliação e descubra o tratamento ideal
+            para seus objetivos.
+        </p>
+
+        <a href="https://wa.me/5500000000000" class="btn btn-primary">
+            💬 Falar pelo WhatsApp
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="contact" id="contato">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>FALE CONOSCO</small>
+
+            <h2>Estamos esperando por você</h2>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-box">
+
+                <h3>📍 Endereço</h3>
+
+                <p>
+                    Av. Paulista, 1000<br>
+                    São Paulo - SP
+                </p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>📞 Telefone</h3>
+
+                <p>
+                    (11) 99999-9999
+                </p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>🕐 Horário</h3>
+
+                <p>
+                    Segunda a sexta<br>
+                    08h às 19h
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Bella Vita Clínica Estética — Projeto demonstrativo desenvolvido pela Seven Digital.
+    </p>
+
+</footer>
+
+
+<a
+    href="https://wa.me/5500000000000"
+    class="whatsapp"
+    aria-label="WhatsApp">
+    ☎
+</a>
+
+
+</body>
+</html>
